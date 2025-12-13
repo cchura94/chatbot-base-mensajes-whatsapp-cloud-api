@@ -3,8 +3,8 @@ const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
 
-
 // importar paquetes locales
+const routes = require("./routes/index");
 
 // inicializar paquetes
 const app = express();
@@ -17,6 +17,8 @@ app.use(cors())
 app.use(express.json());
 
 // configurar rutas
+app.use("/api", routes);
+
 app.get("/saludo", (req, res) => {
     console.log("Mi nombre es: "+req.query.nombre + ", saludos desde: "+req.query.pais);
     return res.json({mensaje: "Hola."});
