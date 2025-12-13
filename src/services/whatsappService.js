@@ -36,6 +36,8 @@ function buildPayload(to, data){
             return { ...base, "type": "document", "document": { link: data.link, caption: data.caption, filename: data.filename } }
         case "location":
             return { ...base, "type": "location", "location": { latitude: data.latitude, longitude: data.longitude, name: data.name, address: data.address } }
+        case "buttons":
+            return { ...base, "type": "interactive", "interactive": { type: "button", body: {text: data.body}, action: {buttons: data.buttons} } }
         default:
             throw new Error(" Tipo de mensaje no soportado: "+data.type);
     }
