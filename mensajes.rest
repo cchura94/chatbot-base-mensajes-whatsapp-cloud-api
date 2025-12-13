@@ -1,0 +1,54 @@
+POST http://127.0.0.1:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "text",
+        "body": "Hola desde Node con Whatsapp Cloud APi"
+    }
+}
+
+### envio de imagenes
+POST http://127.0.0.1:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "image",
+        "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMQ80zpLxrpTgXcTy6e15LvE0KFpuWdmc3eQ&s",
+        "caption": "Este es nuestro \ncurso de la \n> *ruta fullstack*..."
+    }
+}
+
+### document
+POST http://127.0.0.1:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "document",
+        "link": "https://blumbit.iivot.com/uploads/1758556938804-827644277-Temario%20N8N%20(1).pdf",
+        "filename": "Temario n8n",
+        "caption": "Hola le enviamos el temario del curso n8n"
+    }
+}
+
+
+### ubicacion
+POST http://127.0.0.1:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "location",
+        "latitude": "-16.500",
+        "longitude": "-68.150",
+        "name": "Ubicacion La Paz",
+        "address": "Av. 6 de Marzo. Zona ABC"
+    }
+}
+
