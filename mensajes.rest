@@ -75,3 +75,38 @@ Content-Type: application/json
         ]
     }
 }
+
+### lista
+
+POST http://127.0.0.1:3000/api/enviar-mensaje
+Content-Type: application/json
+
+{
+    "numero": "59173277937",
+    "mensaje": {
+        "type": "list",
+        "header": "Menú",
+        "body": "Seleciona una categoria",
+        "footer": "por Blumbit",
+        "buttonText": "Ver opciones",
+        "sections": [
+            {
+                "title": "Frontend",
+                "rows": [
+                    { "id": "cat1", "title": "React" },
+                    { "id": "cat2", "title": "Vue" },
+                    { "id": "cat3", "title": "Angular" }
+                ]
+            },
+            {
+                "title": "Backend",
+                "rows": [
+                    { "id": "cat4", "title": "Node con Nest" },
+                    { "id": "cat5", "title": "Node con Express" },
+                    { "id": "cat6", "title": "Laravel" },
+                    { "id": "cat7", "title": "Spring Boot" }
+                ]
+            }
+        ]
+    }
+}

@@ -9,6 +9,9 @@ const routes = require("./routes/index");
 // inicializar paquetes
 const app = express();
 
+// servir archivos estaticos
+app.use(express.static('public'))
+
 // declarar variables
 const port = process.env.PORT || 3000;
 

@@ -38,6 +38,8 @@ function buildPayload(to, data){
             return { ...base, "type": "location", "location": { latitude: data.latitude, longitude: data.longitude, name: data.name, address: data.address } }
         case "buttons":
             return { ...base, "type": "interactive", "interactive": { type: "button", body: {text: data.body}, action: {buttons: data.buttons} } }
+        case "list":
+            return { ...base, "type": "interactive", "interactive": { type: "list", header: data.header ? { type: "text", text: data.header } : undefined, body: { text: data.body }, footer: data.footer ? { text: data.footer } : undefined, action: { button: data.buttonText || "Opciones", sections: data.sections } } }
         default:
             throw new Error(" Tipo de mensaje no soportado: "+data.type);
     }
